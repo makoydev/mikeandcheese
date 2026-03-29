@@ -56,6 +56,9 @@ func main() {
 		r.Get("/posts", postHandler.GetPosts)
 		r.Get("/posts/featured", postHandler.GetFeaturedPosts)
 		r.Get("/posts/{slug}", postHandler.GetPost)
+		r.Post("/posts", postHandler.CreatePost)
+		r.Put("/posts/{slug}", postHandler.UpdatePost)
+		r.Delete("/posts/{slug}", postHandler.DeletePost)
 	})
 
 	// Server

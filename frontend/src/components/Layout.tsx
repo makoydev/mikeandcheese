@@ -20,6 +20,12 @@ export function Layout() {
               Home
             </Link>
             <Link
+              to="/new"
+              className="text-sm font-medium text-text-secondary hover:text-text-primary dark:hover:text-text-primary-dark transition-colors"
+            >
+              Write
+            </Link>
+            <Link
               to="/about"
               className="text-sm font-medium text-text-secondary hover:text-text-primary dark:hover:text-text-primary-dark transition-colors"
             >

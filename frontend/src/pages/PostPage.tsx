@@ -79,6 +79,12 @@ export function PostPage() {
           <span>&middot;</span>
           <span>{readingTime} min read</span>
         </div>
+        <Link
+          to={`/edit/${post.slug}`}
+          className="inline-flex items-center gap-1 text-sm text-text-secondary hover:text-primary transition-colors"
+        >
+          Edit post
+        </Link>
       </header>
 
       <div
