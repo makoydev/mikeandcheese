@@ -1,0 +1,21 @@
+# Dependencies
+frontend/node_modules/
+frontend/dist/
+
+# Go
+backend/blog.db
+backend/mikeandcheese
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local

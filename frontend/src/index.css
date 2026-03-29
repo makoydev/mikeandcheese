@@ -1,0 +1,106 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-primary: #5f9b65;
+  --color-primary-light: #7ab87f;
+  --color-primary-dark: #4a7d4f;
+  --color-bg-light: #faf9f6;
+  --color-bg-dark: #1a1a1a;
+  --color-bg-dark-secondary: #242424;
+  --color-text-primary: rgba(0, 0, 0, 0.87);
+  --color-text-primary-dark: rgba(255, 255, 255, 0.87);
+  --color-text-secondary: #6b7280;
+  --color-border: #e5e2db;
+  --color-border-dark: #333333;
+
+  --font-serif: "Libre Baskerville", "Freight Text Pro", "Palatino Linotype",
+    Palatino, "Book Antiqua", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-light);
+  color: var(--color-text-primary);
+}
+
+html.dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-primary-dark);
+}
+
+body {
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prose overrides for blog content */
+.prose {
+  --tw-prose-body: var(--color-text-primary);
+  --tw-prose-headings: var(--color-text-primary);
+  --tw-prose-links: var(--color-primary);
+  --tw-prose-bold: var(--color-text-primary);
+  --tw-prose-quotes: var(--color-text-secondary);
+  --tw-prose-quote-borders: var(--color-primary);
+  --tw-prose-code: var(--color-text-primary);
+  --tw-prose-hr: var(--color-border);
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.dark .prose {
+  --tw-prose-body: var(--color-text-primary-dark);
+  --tw-prose-headings: var(--color-text-primary-dark);
+  --tw-prose-links: var(--color-primary-light);
+  --tw-prose-bold: var(--color-text-primary-dark);
+  --tw-prose-quotes: var(--color-text-secondary);
+  --tw-prose-quote-borders: var(--color-primary);
+  --tw-prose-code: var(--color-text-primary-dark);
+  --tw-prose-hr: var(--color-border-dark);
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+}
+
+.prose a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose a:hover {
+  color: var(--color-primary-dark);
+}
+
+.dark .prose a:hover {
+  color: var(--color-primary-light);
+}
+
+.prose blockquote {
+  font-style: italic;
+  border-left-width: 3px;
+}
+
+.prose code {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.dark .prose code {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
+}
